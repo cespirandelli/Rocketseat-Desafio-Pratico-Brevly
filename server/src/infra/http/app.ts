@@ -10,6 +10,9 @@ import {
 } from 'fastify-type-provider-zod'
 import { env } from '@/env'
 import { createLinkRoute } from './routes/create-link'
+import { deleteLinkRoute } from './routes/delete-link'
+import { getLinkByShortUrlRoute } from './routes/get-link-by-short-url'
+import { incrementLinkAccessCountRoute } from './routes/increment-link-access-count'
 import { listLinksRoute } from './routes/list-links'
 
 export const app = fastify()
@@ -55,3 +58,6 @@ app.get('/health', async () => ({ status: 'ok' }))
 
 app.register(createLinkRoute)
 app.register(listLinksRoute)
+app.register(getLinkByShortUrlRoute)
+app.register(deleteLinkRoute)
+app.register(incrementLinkAccessCountRoute)
