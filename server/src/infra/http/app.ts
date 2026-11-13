@@ -11,6 +11,7 @@ import {
 import { env } from '@/env'
 import { createLinkRoute } from './routes/create-link'
 import { deleteLinkRoute } from './routes/delete-link'
+import { exportLinksRoute } from './routes/export-links'
 import { getLinkByShortUrlRoute } from './routes/get-link-by-short-url'
 import { incrementLinkAccessCountRoute } from './routes/increment-link-access-count'
 import { listLinksRoute } from './routes/list-links'
@@ -61,3 +62,4 @@ app.register(listLinksRoute)
 app.register(getLinkByShortUrlRoute)
 app.register(deleteLinkRoute)
 app.register(incrementLinkAccessCountRoute)
+app.register(exportLinksRoute)
