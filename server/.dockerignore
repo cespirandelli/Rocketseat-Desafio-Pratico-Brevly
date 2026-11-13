@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+.env.test
+*.log
+.git
+.vscode
+docker-compose.yml
+Dockerfile
+.dockerignore

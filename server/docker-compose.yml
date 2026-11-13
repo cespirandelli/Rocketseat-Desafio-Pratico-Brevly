@@ -12,5 +12,17 @@ services:
       - ./docker:/docker-entrypoint-initdb.d
       - brevly-pg-data:/var/lib/postgresql/data
 
+  app:
+    build: .
+    container_name: brevly-server
+    ports:
+      - '3333:3333'
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql://docker:docker@db:5432/brevly
+    depends_on:
+      - db
+
 volumes:
   brevly-pg-data:
